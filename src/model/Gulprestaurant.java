@@ -16,7 +16,7 @@ public class Gulprestaurant implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="GULPRESTAURANT_RESTAURANTID_GENERATOR", sequenceName="GULPRESTAURANT_SEQ")
+	@SequenceGenerator(name="GULPRESTAURANT_RESTAURANTID_GENERATOR", sequenceName="GULPRESTAURANT_SEQ",  allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GULPRESTAURANT_RESTAURANTID_GENERATOR")
 	private long restaurantid;
 

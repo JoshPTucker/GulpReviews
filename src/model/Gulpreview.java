@@ -16,7 +16,7 @@ public class Gulpreview implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="GULPREVIEW_REVIEWID_GENERATOR", sequenceName="GULPREVIEW_SEQ")
+	@SequenceGenerator(name="GULPREVIEW_REVIEWID_GENERATOR", sequenceName="GULPREVIEW_SEQ",  allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GULPREVIEW_REVIEWID_GENERATOR")
 	private long reviewid;
 

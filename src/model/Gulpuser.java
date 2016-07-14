@@ -16,7 +16,7 @@ public class Gulpuser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="GULPUSER_USERID_GENERATOR", sequenceName="GULPUSER_SEQ")
+	@SequenceGenerator(name="GULPUSER_USERID_GENERATOR", sequenceName="GULPUSER_SEQ",  allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GULPUSER_USERID_GENERATOR")
 	private long userid;
 

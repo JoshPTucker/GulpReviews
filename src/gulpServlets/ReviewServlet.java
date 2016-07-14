@@ -51,18 +51,22 @@ public class ReviewServlet extends HttpServlet {
 		//get current date time with Date()
 		Date date = new Date();
 		String reviewtext = request.getParameter("userreview");
-		int rating;
+		Number rating;
 		rating= Integer.parseInt(request.getParameter("rating"));
+		BigDecimal r=new BigDecimal( rating.toString());
 		Gulpuser user = (Gulpuser) session.getAttribute("user");
 		Gulprestaurant restaurant= (Gulprestaurant) session.getAttribute("currrestaurant");
 		Gulpreview rev=new Gulpreview();
 		rev.setGulprestaurant(restaurant);
 		rev.setGulpuser(user);
 		rev.setReviewdate(date);
-		//rev.setReviewrating(reviewrating);
+		rev.setReviewtext(reviewtext);
+		rev.setReviewrating(r);
 		ReviewUtil.insert(rev);
 		String nextURL="/restaurantprofile.jsp";
 		response.sendRedirect(request.getContextPath() + nextURL);
+		
+		
 	}
 
 }

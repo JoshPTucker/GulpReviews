@@ -2,6 +2,7 @@ package gulpServlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,14 +17,14 @@ import model.Gulprestaurant;
 /**
  * Servlet implementation class ReviewFeed
  */
-@WebServlet("/ReviewFeed")
-public class ReviewFeed extends HttpServlet {
+@WebServlet("/RestaurantFeed")
+public class RestaurantFeed extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ReviewFeed() {
+	public RestaurantFeed() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -48,7 +49,8 @@ public class ReviewFeed extends HttpServlet {
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
 		ArrayList<Gulprestaurant> restaurants = new ArrayList<Gulprestaurant>();
-		restaurants.addAll(RestaurantUtil.gulprestaurants());
+		List<Gulprestaurant> rs=RestaurantUtil.gulprestaurants();
+		restaurants.addAll(rs);
 		session.setAttribute("restaurants", restaurants);
 		//String nextURL = "/reviewfeed.jsp";
 		String nextURL = "/home.jsp";

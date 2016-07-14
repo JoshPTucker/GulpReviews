@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>review feed</title>
+<title>restaurant feed</title>
 <jsp:include page="bootstrap.jsp"></jsp:include>
 </head>
 <body>
 	<div>
-		<form action="ReviewFeed" method="post">
+		<form action="RestaurantFeed" method="post">
 			<input type="submit" name="submit" id="submit"
-				value="Refresh reviews"></input>
+				value="Refresh restaurant"></input>
 		</form>
 	</div>
 	<div>
@@ -24,6 +24,7 @@
 					<th>Name</th>
 					<th>Description</th>
 					<th>Rating</th>
+					<th>      </th>
 				</tr>
 			</thead>
 			<tbody>

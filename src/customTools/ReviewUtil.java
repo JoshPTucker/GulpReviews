@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-
+import model.Gulprestaurant;
 import model.Gulpreview;
 
 public class ReviewUtil {
@@ -92,11 +92,11 @@ public class ReviewUtil {
 	    {
 	        EntityManager em = DBUtil.getEmFactory().createEntityManager();
 	        List<Gulpreview> reviews = null;
-	        String qString = "select b from Gulpreview b where b.gulpuser.restaurantid = :restaurantid";
+	        String qString = "select b from Gulpreview b where b.gulprestaurant.restaurantid = :restaurantid";
 	        
 	        try{
 	            TypedQuery<Gulpreview> query = em.createQuery(qString,Gulpreview.class);
-	            query.setParameter("restaurant", restaurantid);
+	            query.setParameter("restaurantid", restaurantid);
 	            reviews = query.getResultList();
 	        }catch (Exception e){
 	            e.printStackTrace();
@@ -106,4 +106,5 @@ public class ReviewUtil {
 	            }
 	        return reviews;    
 	    }
+	  
 }
